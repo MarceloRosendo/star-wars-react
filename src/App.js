@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import "./index.css";
+import Header from './components/header'
+import { Typography } from '@mui/material';
+import BackgroundImage from "./components/backgroundImage";
+import SpaceShipDriverForm from "./components/callSpaceshipDriverForm";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <div style={{marginTop:'80px'}}>
+        <Typography align="center" fontSize="30px" variant="h3" component="h2">
+          Entre com suas informações
+        </Typography>
+        <Typography style={{marginTop:'16px'}} align="center" fontSize="15px" variant="subtitle1">
+          Entre com suas informações
+        </Typography>
+        <BackgroundImage/>
+        <SpaceShipDriverForm/>
+      </div>
     </div>
   );
 }
-
 export default App;
