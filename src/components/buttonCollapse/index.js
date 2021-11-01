@@ -46,7 +46,6 @@ const StyledMenu = styled((props) => (
 }));
 
 export default function ButtonCollapse({label, where}) {
-  console.log('HEHE', where)
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const history = useHistory();
@@ -60,8 +59,6 @@ export default function ButtonCollapse({label, where}) {
     history.push(where);
   };
   
-  console.log('teste', label)
-
   return (
     <div>
       <Button
