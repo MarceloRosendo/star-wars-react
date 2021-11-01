@@ -5,6 +5,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import EditIcon from '@mui/icons-material/Edit';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useHistory } from "react-router-dom";
 
 const StyledMenu = styled((props) => (
   <Menu
@@ -44,15 +45,22 @@ const StyledMenu = styled((props) => (
   },
 }));
 
-export default function CustomizedMenus() {
+export default function ButtonCollapse({label, where}) {
+  console.log('HEHE', where)
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const history = useHistory();
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
+    history.push(where);
   };
+  
+  console.log('teste', label)
 
   return (
     <div>
@@ -74,8 +82,7 @@ export default function CustomizedMenus() {
         onClose={handleClose}
       >
         <MenuItem onClick={handleClose} disableRipple>
-          <EditIcon />
-          Edit
+          {label}
         </MenuItem>
       </StyledMenu>
     </div>
